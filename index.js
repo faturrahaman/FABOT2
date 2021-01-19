@@ -76,9 +76,9 @@ const user = JSON.parse(fs.readFileSync('./src/user.json'))
 ban = []
 const vcard = 'BEGIN:VCARD\n' //
             + 'VERSION:3.0\n' //
-            + 'FN: OWNER GANS\n' //
-            + 'ORG:Creator ICHI;\n' //
-            + 'TEL;type=CELL;type=VOICE;waid=628165466368:+62-816-5466-368\n' // NOMER HP LU
+            + 'FN: OWNER faturjeu\n' //
+            + 'ORG:Creator faturbot;\n' //
+            + 'TEL;type=CELL;type=VOICE;waid=622118484363:+62-21-1848-4363\n' // NOMER HP LU
             + 'END:VCARD'
 prefix = '!'
 blocked = ['6289655478810@s.whatsapp.net']
@@ -1878,7 +1878,8 @@ if (isBanned) return reply(mess.only.benned)
 					teks = body.slice(6)
 					if (teks.length > 9) return reply('Teksnya kepanjangan, maksimal 9 karakter')
 					reply(mess.wait)
-					Buffer = await getBuffer(`https://tobz-api.herokuapp.com/api/photooxy?theme=wood_block&text=${teks}&apikey=kontol`)
+					Buffer = await getBuffer(`https://tobz-api.herokuapp.com/api/photooxy?theme=wood_block&text=${teks}&apikey=kontol`)
+
 					client.sendMessage(from, buffer, image, {quoted: mek, caption: ''+teks})
 					break
 				case 'thunder':
